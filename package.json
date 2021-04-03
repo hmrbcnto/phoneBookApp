@@ -8,7 +8,7 @@
     "start": "node index.js",
     "deploy": "git push heroku main",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy:full":"npm run build:ui  && git add -A && git commit -m uibuild && git push && npm run deploy",
+    "deploy:full":"npm run build:ui  && git add -A && git commit -m uibuild && git push origin main && npm run deploy",
     "logs:prod": "heroku logs --tail", 
     "dev": "nodemon index.js"
   },
