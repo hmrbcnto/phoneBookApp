@@ -4,8 +4,12 @@
   "description": "Phonebook app",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf build && cd ../phonebookFrontEnd/ && npm run build --prod && cp -r build ../phonebookBackEnd",
     "start": "node index.js",
+    "deploy": "git push heroku main",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:full":"npm run build:ui  && git add -A && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail", 
     "dev": "nodemon index.js"
   },
   "author": "Homer Bacanto",
